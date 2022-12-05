@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "This project is the next part of book Aqvino Gandi Front-End",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavelNovik/CoffeeRun.git"
+  },
+  "author": "Pawel Nowik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavelNovik/CoffeeRun/issues"
+  },
+  "homepage": "https://github.com/PavelNovik/CoffeeRun#readme"
+}
