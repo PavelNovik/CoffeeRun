@@ -15,8 +15,8 @@
     }
   }
   FormHandler.prototype.addSubmitHandler = function (fn) {
-    console.log('Setting submit handler from form');
-    console.log(this.$formElement);
+    // console.log('Setting submit handler from form');
+    // console.log(this.$formElement);
     // console.log(this.$formElement[0][7]);
     this.$formElement.on('submit', function (e) {
       e.preventDefault();
@@ -37,7 +37,7 @@
     });
   };
   FormHandler.prototype.addRangeHandler = function () {
-    console.log('Setting range handler from form');
+    // console.log('Setting range handler from form');
     // console.log(range);
     range.on('change', function (e) {
       e.preventDefault();
@@ -50,7 +50,7 @@
         labelText.style.color = 'green';
       }
       if (val >= 33 && val < 70) {
-        labelText.style.color = 'brown';
+        labelText.style.color = 'yellow';
       }
       if (val >= 70) {
         labelText.style.color = 'red';

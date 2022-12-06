@@ -11,5 +11,5 @@
 
   formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
   formHandler.addRangeHandler();
-  console.log(formHandler);
+  // console.log(formHandler);
 })(window);
