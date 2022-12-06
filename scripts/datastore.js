@@ -1,6 +1,6 @@
 'use strict';
 (function (window) {
-  console.log('Running datastore.js');
+  // console.log('Running datastore.js');
   const App = window.App || {};
 
   function DataStore() {
