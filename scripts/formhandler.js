@@ -5,6 +5,13 @@
   const range = $('input[type="range"]');
   //   console.log(range);
 
+  function startingView() {
+    const label = range[0].labels[1];
+    label.style.color = 'green';
+    label.innerText = 30;
+  }
+  startingView();
+
   function FormHandler(selector) {
     if (!selector) {
       throw new Error('No selector provided');
@@ -14,6 +21,7 @@
       throw new Error('Could not find element with selector: ' + selector);
     }
   }
+
   FormHandler.prototype.addSubmitHandler = function (fn) {
     // console.log('Setting submit handler from form');
     // console.log(this.$formElement);
@@ -31,7 +39,12 @@
       console.log(data);
       fn(data);
       this.reset();
-      //   console.log(this);
+
+      startingView();
+      // this[7].labels[1].innerText = 30;
+      // this[7].labels[1].style.color = 'green';
+      // console.log(this);
+      // console.log(this[7].labels[1].innerText);
       //   console.log(this.elements);
       this.elements[0].focus();
     });
