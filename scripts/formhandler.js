@@ -4,6 +4,7 @@
   const $ = window.jQuery;
   const range = $('input[type="range"]');
   //   console.log(range);
+  const size = 'coffezilla';
 
   function startingView() {
     const label = range[0].labels[1];
@@ -36,6 +37,14 @@
           data[item.name] = item.value;
           console.log(item.name + ' is ' + item.value);
         });
+
+      if (data.flavor && data.strenght >= 70 && data.size === size) {
+        console.log(
+          `My congratulations!!! Your ${data.flavor} ${data.size} coffee is the best of choise. You can choose the next options for your order!`
+        );
+        console.log($('#myModal'));
+      }
+
       console.log(data);
       fn(data);
       this.reset();
