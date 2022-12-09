@@ -42,7 +42,14 @@
         console.log(
           `My congratulations!!! Your ${data.flavor} ${data.size} coffee is the best of choise. You can choose the next options for your order!`
         );
-        console.log($('#myModal'));
+        const body = $('body');
+        const myModal = $('#myModal');
+        console.log(body[0]);
+        console.log(myModal[0]);
+        myModal.modal('show');
+        // myModal[0].setAttribute('style', 'display = block;');
+        // myModal[0].classList.add('in');
+        // body[0].classList.add('modal-open');
       }
 
       console.log(data);
