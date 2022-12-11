@@ -52,13 +52,15 @@
         // myModal[0].classList.add('in');
         // body[0].classList.add('modal-open');
 
-        const btns = $('.modal-footer')[0].children;
+        // const btns = $('.modal-footer')[0].children;
+        const btns = $('.modal-footer .btn');
         const btn1 = btns[0];
         const btn2 = btns[1];
         console.log(btns);
         btn1.addEventListener('click', function () {
           console.log(this);
         });
+
         btn2.addEventListener('click', function () {
           console.log('ok');
         });
@@ -72,7 +74,10 @@
 
       // this[7].labels[1].innerText = 30;
       // this[7].labels[1].style.color = 'green';
+
+      // Может быть нужно сделать обращение к элементу через $ ?
       console.log(this);
+      console.log($(this));
       // console.log(this[7].labels[1].innerText);
       //   console.log(this.elements);
       this.elements[0].focus();
