@@ -5,6 +5,10 @@
   const range = $('input[type="range"]');
   //   console.log(range);
   const size = 'coffezilla';
+  const myModal = $('#myModal');
+  const secretMenu = document.querySelector('#secret');
+  console.log(secretMenu);
+  secretMenu.classList.remove('disactivate');
 
   function startingView() {
     const label = range[0].labels[1];
@@ -42,28 +46,25 @@
         console.log(
           `My congratulations!!! Your ${data.flavor} ${data.size} coffee is the best of choise. You can choose the next options for your order!`
         );
-        // const body = $('body');
-        const myModal = $('#myModal');
-        // console.log(body[0]);
-        // console.log(myModal[0]);
-        // console.log(myModal);
+
         myModal.modal('show');
-        // myModal[0].setAttribute('style', 'display = block;');
-        // myModal[0].classList.add('in');
-        // body[0].classList.add('modal-open');
 
         // const btns = $('.modal-footer')[0].children;
         const btns = $('.modal-footer .btn');
         const btn1 = btns[0];
         const btn2 = btns[1];
         console.log(btns);
-        btn1.addEventListener('click', function () {
-          console.log(this);
-        });
-
-        btn2.addEventListener('click', function () {
-          console.log('ok');
-        });
+        console.log(this);
+        console.log(data.emailAddress === '');
+        if (data.emailAddress !== '') {
+          btn2.addEventListener('click', function () {
+            console.log('ok');
+            // secretMenu.classList.remove('disactivate');
+          });
+        }
+        // btn1.addEventListener('click', function () {
+        //   console.log(this);
+        // });
       }
 
       console.log(data);
