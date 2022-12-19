@@ -7,8 +7,18 @@
   const size = 'coffezilla';
   const myModal = $('#myModal');
   const secretMenu = document.querySelector('#secret');
+  const addMenu = `
+                              <label for="secretMenu">Super options</label>
+                            <select name="secretMenu" id="secretMenu" class="form-control">
+                                <option value="">None</option>
+                                <option value="timeTravel">Time Travel</option>
+                                <option value="mindControl">Mind Control</option>
+                                <option value="goodCode">Good Code</option>
+                            </select>
+  
+  `;
   console.log(secretMenu);
-  secretMenu.classList.remove('disactivate');
+  // secretMenu.classList.remove('disactivate');
 
   function startingView() {
     const label = range[0].labels[1];
@@ -56,10 +66,11 @@
         console.log(btns);
         console.log(this);
         console.log(data.emailAddress === '');
-        if (data.emailAddress !== '') {
+        if (data.emailAddress === '') {
           btn2.addEventListener('click', function () {
             console.log('ok');
-            // secretMenu.classList.remove('disactivate');
+            // secretMenu.append(addMenu);
+            secretMenu.insertAdjacentHTML('beforeend', addMenu);
           });
         }
         // btn1.addEventListener('click', function () {
@@ -70,8 +81,8 @@
       console.log(data);
       fn(data);
 
-      this.reset();
-      startingView();
+      // this.reset();
+      // startingView();
 
       // this[7].labels[1].innerText = 30;
       // this[7].labels[1].style.color = 'green';
