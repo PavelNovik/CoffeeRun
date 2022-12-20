@@ -10,14 +10,23 @@
   const addMenu = `
                               <label for="secretMenu">Super options</label>
                             <select name="secretMenu" id="secretMenu" class="form-control">
-                                <option value="">None</option>
-                                <option value="timeTravel">Time Travel</option>
-                                <option value="mindControl">Mind Control</option>
-                                <option value="goodCode">Good Code</option>
+                            <option value="">None</option>
+                            <option value="timeTravel">Time Travel</option>
+                            <option value="mindControl">Mind Control</option>
+                            <option value="goodCode">Good Code</option>
                             </select>
-  
-  `;
-  console.log(secretMenu);
+                            
+                            `;
+
+  // let status = true;
+  let counter = 0;
+
+  function addMenuIntoHtml() {
+    console.log('ok');
+    secretMenu.insertAdjacentHTML('beforeend', addMenu);
+  }
+
+  // console.log(secretMenu);
   // secretMenu.classList.remove('disactivate');
 
   function startingView() {
@@ -45,51 +54,59 @@
       e.preventDefault();
 
       const data = {};
+      let status = true;
       $(this)
         .serializeArray()
         .forEach(function (item) {
           data[item.name] = item.value;
           console.log(item.name + ' is ' + item.value);
         });
-
-      if (data.flavor && +data.strenght === 100 && data.size === size) {
-        console.log(
-          `My congratulations!!! Your ${data.flavor} ${data.size} coffee is the best of choise. You can choose the next options for your order!`
-        );
-
-        myModal.modal('show');
-
-        // const btns = $('.modal-footer')[0].children;
+      // console.log(status);
+      if (
+        data.flavor &&
+        +data.strenght === 100 &&
+        data.size === size &&
+        counter === 0
+      ) {
+        const userText = `My congratulations!!! Your ${data.flavor} ${data.size} coffee is the best of choise. You can choose the next options for your order!`;
+        if (!data.secretMenu) {
+          myModal.modal('show');
+          document.querySelector('.modal-body p').innerText = userText;
+          status = false;
+          counter++;
+        }
         const btns = $('.modal-footer .btn');
         const btn1 = btns[0];
         const btn2 = btns[1];
-        console.log(btns);
-        console.log(this);
-        console.log(data.emailAddress === '');
-        if (data.emailAddress === '') {
-          btn2.addEventListener('click', function () {
-            console.log('ok');
-            // secretMenu.append(addMenu);
-            secretMenu.insertAdjacentHTML('beforeend', addMenu);
-          });
+
+        if (data.emailAddress !== '') {
+          btn2.addEventListener('click', addMenuIntoHtml);
         }
+        // btn1.addEventListener('click', function () {
+        //   status = true;
+        // });
+
+        // console.log(this);
+
         // btn1.addEventListener('click', function () {
         //   console.log(this);
         // });
       }
-
+      console.log(status);
+      if (!status) return;
       console.log(data);
       fn(data);
 
-      // this.reset();
-      // startingView();
+      this.reset();
+      startingView();
+      counter = 0;
 
       // this[7].labels[1].innerText = 30;
       // this[7].labels[1].style.color = 'green';
 
       // Может быть нужно сделать обращение к элементу через $ ?
-      console.log(this);
-      console.log($(this));
+      // console.log(this);
+      // console.log($(this));
       // console.log(this[7].labels[1].innerText);
       //   console.log(this.elements);
       this.elements[0].focus();
