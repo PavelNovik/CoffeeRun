@@ -1,10 +1,12 @@
 'use strict';
 (function (window) {
   const FORM_SELECTOR = '[data-coffee-order="form"]';
+  const CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
   const App = window.App;
   const Truck = App.Truck;
   const DataStore = App.DataStore;
   const FormHandler = App.FormHandler;
+  const CheckList = app.CheckList;
   const myTruck = new Truck('n3.14', new DataStore());
   window.myTruck = myTruck;
   const formHandler = new FormHandler(FORM_SELECTOR);
