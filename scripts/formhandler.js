@@ -56,7 +56,7 @@
 
       if (
         data.flavor &&
-        +data.strenght === 100 &&
+        +data.strength === 100 &&
         data.size === size &&
         counter === 0
       ) {
