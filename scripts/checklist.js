@@ -18,10 +18,21 @@
       'input',
       function (e) {
         const email = e.target.value;
-        this.removeRow(email);
+        console.log(e);
+        // Set input disabled and opacity 50%
+        this.disableRow(email);
+
+        // Delete the order after 5 second
+        setTimeout(() => {
+          this.removeRow(email);
+        }, 5000);
         fn(email);
       }.bind(this)
     );
+    this.$element.dblclick(function (e) {
+      console.log(e);
+      console.log('duble click');
+    });
   };
 
   CheckList.prototype.addRow = function (coffeeOrder) {
@@ -36,11 +47,23 @@
     this.$element.append(rowElement.$element);
   };
 
+  // Function to delete row order
   CheckList.prototype.removeRow = function (email) {
     this.$element
       .find('[value ="' + email + '"]')
-      .closest('[data-coffee-order = "checkbox"')
+      .closest('[data-coffee-order = "checkbox"]')
       .remove();
+  };
+
+  // Function to disable order
+  CheckList.prototype.disableRow = function (email) {
+    this.$element
+      .find('[value ="' + email + '"]')
+      .closest('input')
+      .prop('disabled', true);
+    this.$element
+      .find('[value ="' + email + '"]')
+      .closest('[data-coffee-order = "checkbox"]')[0].style.opacity = '0.5';
   };
 
   function Row(coffeeOrder) {
