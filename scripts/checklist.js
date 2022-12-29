@@ -2,6 +2,7 @@
 (function (window) {
   const App = window.App || {};
   const $ = window.jQuery;
+  let clickCounter = [];
   function CheckList(selector) {
     if (!selector) {
       throw new Error('No selector provided');
@@ -14,25 +15,32 @@
 
   CheckList.prototype.addClickHandler = function (fn) {
     this.$element.on(
-      'click',
+      'click dblclick',
       'input',
       function (e) {
+        clickCounter.push(e.type);
         const email = e.target.value;
         console.log(e);
+        console.log(e.type);
+        console.log(clickCounter);
+
         // Set input disabled and opacity 50%
         this.disableRow(email);
 
         // Delete the order after 5 second
         setTimeout(() => {
-          this.removeRow(email);
-        }, 5000);
-        fn(email);
+          if (clickCounter.includes('dblclick')) {
+            console.log(`It is DUBLECLICK EVENT`);
+            clickCounter = [];
+          }
+          if (clickCounter.includes('click')) {
+            this.removeRow(email);
+            clickCounter = [];
+            fn(email);
+          }
+        }, 2000);
       }.bind(this)
     );
-    this.$element.dblclick(function (e) {
-      console.log(e);
-      console.log('duble click');
-    });
   };
 
   CheckList.prototype.addRow = function (coffeeOrder) {
@@ -57,10 +65,10 @@
 
   // Function to disable order
   CheckList.prototype.disableRow = function (email) {
-    this.$element
-      .find('[value ="' + email + '"]')
-      .closest('input')
-      .prop('disabled', true);
+    // this.$element
+    //   .find('[value ="' + email + '"]')
+    //   .closest('input')
+    //   .prop('disabled', true);
     this.$element
       .find('[value ="' + email + '"]')
       .closest('[data-coffee-order = "checkbox"]')[0].style.opacity = '0.5';
