@@ -20,10 +20,12 @@
       function (e) {
         clickCounter.push(e.type);
         const email = e.target.value;
+
+        console.log(email);
         console.log(e);
+        console.log(e.target);
         console.log(e.type);
         console.log(clickCounter);
-
         // Set input disabled and opacity 50%
         this.disableRow(email);
 
@@ -38,7 +40,7 @@
             clickCounter = [];
             fn(email);
           }
-        }, 2000);
+        }, 1000);
       }.bind(this)
     );
   };
@@ -71,7 +73,8 @@
     //   .prop('disabled', true);
     this.$element
       .find('[value ="' + email + '"]')
-      .closest('[data-coffee-order = "checkbox"]')[0].style.opacity = '0.5';
+      .closest('[data-coffee-order = "checkbox"]')
+      .css('opacity', '0.5');
   };
 
   function Row(coffeeOrder) {
@@ -80,11 +83,14 @@
       class: 'checkbox',
     });
     let textColor = '';
-    const $label = $('<label></label>');
+    const $label = $('<label></label>', {
+      for: 'orderInfo',
+    });
 
     const $checkbox = $('<input></input>', {
       type: 'checkbox',
       value: coffeeOrder.emailAddress,
+      id: 'orderInfo',
     });
 
     let description = '[' + coffeeOrder.strength + 'x] ';
@@ -118,7 +124,8 @@
     $label.append($checkbox);
     $label.append(description);
     // console.log($label[0]);
-    $label[0].style.color = textColor;
+    // $label[0].style.color = textColor;
+    $label.css('color', textColor);
 
     $div.append($label);
 

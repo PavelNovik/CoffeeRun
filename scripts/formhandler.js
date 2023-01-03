@@ -25,9 +25,7 @@
   }
 
   function startingView() {
-    const label = range[0].labels[1];
-    label.style.color = 'green';
-    label.innerText = 30;
+    $('[for="strengthLevel"]').last().css('color', 'green').text('30');
   }
   startingView();
   function FormHandler(selector) {
@@ -50,7 +48,7 @@
         .serializeArray()
         .forEach(function (item) {
           data[item.name] = item.value;
-          console.log(item.name + ' is ' + item.value);
+          // console.log(item.name + ' is ' + item.value);
         });
       if (
         data.flavor &&
@@ -65,12 +63,10 @@
           status = false;
           counter++;
         }
-        const btns = $('.modal-footer .btn');
-
-        const btn2 = btns[1];
+        const btnSubModal = $('.modal-footer .btn').last();
 
         if (data.emailAddress !== '') {
-          btn2.addEventListener('click', addMenuIntoHtml);
+          btnSubModal.on('click', addMenuIntoHtml);
         }
       }
 
