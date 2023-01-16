@@ -45,6 +45,11 @@
     );
   };
 
+  // Set data in form area
+  CheckList.prototype.setDataInForm = function (coffeeOrder) {
+    // some day this area was filled
+  };
+
   CheckList.prototype.addRow = function (coffeeOrder) {
     // Удаляем все имеющиеся строки, соответствующие данному адресу
     // электронной почты
