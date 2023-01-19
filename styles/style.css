@@ -1,3 +1,6 @@
 .disactivate {
-    display: none;    
+  display: none;
+}
+form :focus:required:invalid {
+  border-color: #a94442;
 }

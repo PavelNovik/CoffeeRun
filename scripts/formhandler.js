@@ -28,6 +28,7 @@
     $('[for="strengthLevel"]').last().css('color', 'green').text('30');
   }
   startingView();
+
   function FormHandler(selector) {
     if (!selector) {
       throw new Error('No selector provided');
@@ -82,6 +83,21 @@
       this.elements[0].focus();
     });
   };
+  FormHandler.prototype.addInputHandler = function (fn) {
+    console.log(`Setting input handler for form`);
+    this.$formElement.on('input', '[name="emailAddress"]', function (e) {
+      const emailAddress = e.target.value;
+      // console.log(fn(emailAddress));
+      let message = '';
+      if (fn(emailAddress)) {
+        $(e.target).setCustomValidity('');
+      } else {
+        message = emailAddress + ' is not an autorized address!';
+        $(e.target).setCustomValidity(message);
+      }
+    });
+  };
+
   FormHandler.prototype.addRangeHandler = function () {
     range.on('change', function (e) {
       e.preventDefault();

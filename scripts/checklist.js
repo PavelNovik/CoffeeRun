@@ -3,6 +3,7 @@
   const App = window.App || {};
   const $ = window.jQuery;
   let clickCounter = [];
+
   function CheckList(selector) {
     if (!selector) {
       throw new Error('No selector provided');
