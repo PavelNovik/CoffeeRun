@@ -2,14 +2,18 @@
 (function (window) {
   const FORM_SELECTOR = '[data-coffee-order="form"]';
   const CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
+  const SERVER_URL = 'http://localhost:8080/coffeeorders';
   const App = window.App;
   const Truck = App.Truck;
   const DataStore = App.DataStore;
+  const RemoteDataStore = App.RemoteDataStore;
   const FormHandler = App.FormHandler;
   const Validation = App.Validation;
   const CheckList = App.CheckList;
+  const remoteDS = new RemoteDataStore(SERVER_URL);
   const webshim = window.webshim;
-  const myTruck = new Truck('n3.14', new DataStore());
+  // const myTruck = new Truck('n3.14', new DataStore());
+  const myTruck = new Truck('n3.14', remoteDS);
   window.myTruck = myTruck;
   const checkList = new CheckList(CHECKLIST_SELECTOR);
   checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
