@@ -1,16 +1,17 @@
 {
   "coffeeorders": [
     {
-      "coffee": "orde",
-      "emailAddress": "brn2befree@test.com",
-      "size": "grande",
-      "flavor": "caramel",
-      "strength": "69",
+      "coffee": "a",
+      "emailAddress": "sasss@test.com",
+      "size": "coffezilla",
+      "flavor": "mocha",
+      "strength": "100",
+      "secretMenu": "timeTravel",
       "id": 1
     },
     {
-      "coffee": "americ",
-      "emailAddress": "nowikPawel@test.com",
+      "coffee": "b",
+      "emailAddress": "suga@test.com",
       "size": "coffezilla",
       "flavor": "caramel",
       "strength": "100",
@@ -18,117 +19,37 @@
       "id": 2
     },
     {
-      "coffee": "americ",
-      "emailAddress": "brn2befree@test.com",
+      "coffee": "c",
+      "emailAddress": "interferm@test.com",
       "size": "coffezilla",
       "flavor": "almond",
       "strength": "100",
-      "secretMenu": "timeTravel",
+      "secretMenu": "goodCode",
       "id": 3
     },
     {
-      "coffee": "americ",
-      "emailAddress": "brn2befree@test.com",
-      "size": "grande",
-      "flavor": "",
-      "strength": "12",
-      "id": 4
-    },
-    {
-      "coffee": "qw",
-      "emailAddress": "nowikPawel@test.com",
-      "size": "grande",
-      "flavor": "caramel",
-      "strength": "30",
-      "id": 5
-    },
-    {
-      "coffee": "asdfg",
-      "emailAddress": "wq@test.com",
-      "size": "grande",
-      "flavor": "caramel",
-      "strength": "60",
-      "id": 6
-    },
-    {
-      "coffee": "as",
-      "emailAddress": "wq@test.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": 7
-    },
-    {
-      "coffee": "asadadasd",
-      "emailAddress": "nowikPawel@test.com",
-      "size": "grande",
-      "flavor": "caramel",
-      "strength": "43",
-      "id": 8
-    },
-    {
-      "coffee": "qwer",
-      "emailAddress": "wq@test.com",
-      "size": "short",
-      "flavor": "",
-      "strength": "30",
-      "id": 9
-    },
-    {
-      "coffee": "sdasdas",
-      "emailAddress": "nowikPawel@test.com",
-      "size": "grande",
-      "flavor": "",
-      "strength": "30",
-      "id": 10
-    },
-    {
-      "coffee": "fgf",
-      "emailAddress": "nowikPawel@test.com",
-      "size": "tall",
-      "flavor": "caramel",
-      "strength": "30",
-      "id": 11
-    },
-    {
-      "coffee": "fgfg",
-      "emailAddress": "nowikPawel@test.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": 12
-    },
-    {
-      "coffee": "igo",
-      "emailAddress": "nowikPawel@test.com",
-      "size": "short",
-      "flavor": "",
-      "strength": "5",
-      "id": 13
-    },
-    {
-      "coffee": "asas",
-      "emailAddress": "sas@test.com",
-      "size": "tall",
-      "flavor": "caramel",
-      "strength": "55",
-      "id": 14
-    },
-    {
-      "coffee": "erewr",
+      "coffee": "d",
       "emailAddress": "erew@test.com",
       "size": "tall",
       "flavor": "",
       "strength": "30",
-      "id": 15
+      "id": 4
     },
     {
-      "coffee": "asdsadasdasd",
-      "emailAddress": "wq@test.com",
+      "coffee": "e",
+      "emailAddress": "sas@test.com",
       "size": "grande",
       "flavor": "caramel",
-      "strength": "5",
-      "id": 16
+      "strength": "47",
+      "id": 5
+    },
+    {
+      "coffee": "f",
+      "emailAddress": "wq@test.com",
+      "size": "short",
+      "flavor": "",
+      "strength": "0",
+      "id": 6
     }
   ]
 }

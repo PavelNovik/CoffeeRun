@@ -25,6 +25,21 @@
     myTruck.createOrder.call(myTruck, data);
     checkList.addRow.call(checkList, data);
   });
+
+  // Under this comment is the cod wich add data from remote datastorage to the page.
+  // Because if we used Fake API SERVER - JSON-server, after all request the page was refresh
+  const getRemoteData = function () {
+    $.get(`http://localhost:8080/coffeeorders`, function (resp) {
+      resp.forEach((element) => {
+        // console.log(element);
+        checkList.addRow.call(checkList, element);
+      });
+    });
+  };
+  getRemoteData();
+  remoteDS.getAll();
+  // remoteDS.get('');
+
   formHandler.addInputHandler(Validation.isCompanyEmail);
   webshim.polyfill('forms forms-ext');
   webshim.setOptions('forms', {

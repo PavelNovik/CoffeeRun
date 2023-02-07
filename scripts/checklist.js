@@ -3,6 +3,7 @@
   const App = window.App || {};
   const $ = window.jQuery;
   let clickCounter = [];
+  let data;
 
   function CheckList(selector) {
     if (!selector) {
@@ -23,10 +24,10 @@
         const email = e.target.value;
 
         console.log(email);
-        console.log(e);
+        // console.log(e);
         console.log(e.target);
-        console.log(e.type);
-        console.log(clickCounter);
+        // console.log(e.type);
+        // console.log(clickCounter);
         // Set input disabled and opacity 50%
         this.disableRow(email);
 
@@ -65,6 +66,7 @@
 
   // Function to delete row order
   CheckList.prototype.removeRow = function (email) {
+    // console.log(this.$element);
     this.$element
       .find('[value ="' + email + '"]')
       .closest('[data-coffee-order = "checkbox"]')
@@ -82,6 +84,17 @@
       .closest('[data-coffee-order = "checkbox"]')
       .css('opacity', '0.5');
   };
+
+  // const getRemoteData = function () {
+  //   $.get(`http://localhost:8080/coffeeorders`, function (resp) {
+  //     resp.forEach((element) => {
+  //       console.log(element);
+  //       CheckList.addRow(element);
+  //     });
+  //   });
+  // };
+
+  // getRemoteData();
 
   function Row(coffeeOrder) {
     const $div = $('<div></div>', {
