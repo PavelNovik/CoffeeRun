@@ -37,7 +37,7 @@
     });
   };
   getRemoteData();
-  remoteDS.getAll();
+  // remoteDS.getAll();
   // remoteDS.get('');
 
   formHandler.addInputHandler(Validation.isCompanyEmail);

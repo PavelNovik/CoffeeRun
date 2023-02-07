@@ -10,6 +10,9 @@
       throw new Error('No selector provided');
     }
     this.$element = $(selector);
+
+    // console.log(this.$element);
+
     if (this.$element.length === 0) {
       throw new Error('Could not find element with selector: ' + selector);
     }
@@ -22,12 +25,13 @@
       function (e) {
         clickCounter.push(e.type);
         const email = e.target.value;
-
-        console.log(email);
         // console.log(e);
-        console.log(e.target);
+        // console.log(email);
+        // console.log(e);
+        // console.log(e.target);
         // console.log(e.type);
         // console.log(clickCounter);
+        // console.log(this);
         // Set input disabled and opacity 50%
         this.disableRow(email);
 
@@ -38,6 +42,7 @@
             clickCounter = [];
           }
           if (clickCounter.includes('click')) {
+            // console.log(this);
             this.removeRow(email);
             clickCounter = [];
             fn(email);
@@ -102,14 +107,15 @@
       class: 'checkbox',
     });
     let textColor = '';
-    const $label = $('<label></label>', {
-      for: 'orderInfo',
-    });
 
     const $checkbox = $('<input></input>', {
       type: 'checkbox',
       value: coffeeOrder.emailAddress,
       id: 'orderInfo',
+    });
+
+    const $label = $('<label></label>', {
+      // for: 'orderInfo',
     });
 
     let description = '[' + coffeeOrder.strength + 'x] ';

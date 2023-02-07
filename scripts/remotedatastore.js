@@ -24,7 +24,7 @@
   RemoteDataStore.prototype.getAll = function (cb) {
     $.get(this.serverUrl, function (serverResponse) {
       serverResponse.forEach((element) => {
-        console.log(element);
+        // console.log(element);
       });
 
       // cb(serverResponse);
