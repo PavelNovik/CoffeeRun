@@ -22,8 +22,17 @@
   // formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
   formHandler.addSubmitHandler(function (data) {
     // получив значение константы data мы вызываем функцию и методом call вызываем две дополнительные функции
-    myTruck.createOrder.call(myTruck, data);
-    checkList.addRow.call(checkList, data);
+    // myTruck.createOrder.call(myTruck, data);
+    // checkList.addRow.call(checkList, data);
+
+    return myTruck.createOrder.call(myTruck, data).then(
+      function () {
+        checkList.addRow.call(checkList, data);
+      },
+      function () {
+        alert('Server unreachable. Try again later.');
+      }
+    );
   });
 
   // Under this comment is the cod wich add data from remote datastorage to the page.
@@ -36,7 +45,6 @@
       });
     });
   };
-  getRemoteData();
   // remoteDS.getAll();
   // remoteDS.get('');
 
@@ -48,4 +56,8 @@
   });
   formHandler.addRangeHandler();
   // console.log(formHandler);
+
+  // Print all orders to Row page
+  // getRemoteData();
+  myTruck.printOrders(checkList.addRow.bind(checkList));
 })(window);

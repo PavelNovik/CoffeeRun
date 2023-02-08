@@ -49,7 +49,7 @@
         .serializeArray()
         .forEach(function (item) {
           data[item.name] = item.value;
-          // console.log(item.name + ' is ' + item.value);
+          console.log(item.name + ' is ' + item.value);
         });
       if (
         data.flavor &&
@@ -73,14 +73,16 @@
 
       if (!status) return;
       console.log(data);
-      fn(data);
-
-      this.reset();
-      startingView();
-      secretMenu.innerHTML = '';
-      counter = 0;
-
-      this.elements[0].focus();
+      // fn(data);
+      fn(data).then(
+        function () {
+          this.reset();
+          startingView();
+          secretMenu.innerHTML = '';
+          counter = 0;
+          this.elements[0].focus();
+        }.bind(this)
+      );
     });
   };
   FormHandler.prototype.addInputHandler = function (fn) {

@@ -4,41 +4,35 @@
       "coffee": "a",
       "emailAddress": "sasss@test.com",
       "size": "tall",
-      "flavor": "",
+      "flavor": "caramel",
       "strength": "30",
-      "id": 5
+      "id": 1
     },
     {
-      "coffee": "aaa",
+      "coffee": "b",
       "emailAddress": "suga@test.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": 6
+      "size": "grande",
+      "flavor": "almond",
+      "strength": "55",
+      "id": 2
     },
     {
       "coffee": "americ",
-      "emailAddress": "interferm@test.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": 7
+      "emailAddress": "nowikPawel@test.com",
+      "size": "coffezilla",
+      "flavor": "mocha",
+      "strength": "100",
+      "secretMenu": "goodCode",
+      "id": 3
     },
     {
-      "coffee": "asas",
-      "emailAddress": "erew@test.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": 8
-    },
-    {
-      "coffee": "araer",
+      "coffee": "asd",
       "emailAddress": "wq@test.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": 9
+      "size": "coffezilla",
+      "flavor": "caramel",
+      "strength": "100",
+      "secretMenu": "timeTravel",
+      "id": 4
     }
   ]
 }

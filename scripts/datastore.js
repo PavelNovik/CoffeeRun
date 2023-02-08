@@ -2,6 +2,7 @@
 (function (window) {
   // console.log('Running datastore.js');
   const App = window.App || {};
+  const Promise = window.Promise;
 
   function DataStore() {
     // console.log('running the DataStore function');
@@ -9,7 +10,14 @@
   }
 
   DataStore.prototype.add = function (key, val) {
-    this.data[key] = val;
+    // this.data[key] = val;
+    const promise = new Promise(
+      function (resolve, reject) {
+        this.data[key] = val;
+        resolve(null);
+      }.bind(this)
+    );
+    return promise;
   };
 
   DataStore.prototype.get = function (key) {

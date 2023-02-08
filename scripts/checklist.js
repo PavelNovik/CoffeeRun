@@ -43,9 +43,15 @@
           }
           if (clickCounter.includes('click')) {
             // console.log(this);
-            this.removeRow(email);
-            clickCounter = [];
-            fn(email);
+            // this.removeRow(email);
+            // clickCounter = [];
+            // fn(email);
+            fn(email).then(
+              function () {
+                this.removeRow(email);
+                clickCounter = [];
+              }.bind(this)
+            );
           }
         }, 1000);
       }.bind(this)
