@@ -12,8 +12,8 @@
   const CheckList = App.CheckList;
   const remoteDS = new RemoteDataStore(SERVER_URL);
   const webshim = window.webshim;
-  // const myTruck = new Truck('n3.14', new DataStore());
-  const myTruck = new Truck('n3.14', remoteDS);
+  const myTruck = new Truck('n3.14', new DataStore());
+  // const myTruck = new Truck('n3.14', remoteDS);
   window.myTruck = myTruck;
   const checkList = new CheckList(CHECKLIST_SELECTOR);
   checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));

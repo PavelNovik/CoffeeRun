@@ -66,7 +66,8 @@
         }
         const btnSubModal = $('.modal-footer .btn').last();
 
-        if (data.emailAddress !== '') {
+        // if (data.emailAddress !== '') {
+        if (data.emailAddress) {
           btnSubModal.on('click', addMenuIntoHtml);
         }
       }
